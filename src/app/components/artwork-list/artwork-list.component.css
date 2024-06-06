@@ -1,0 +1,58 @@
+.c-spinner {
+  position: fixed;
+  top: -1rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.c-menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.c-view {
+  text-align: right;
+}
+
+button {
+  margin-left: 10px;
+  background-color: #ffffff;
+  color: #3f51b5;
+  box-shadow: none;
+}
+
+button:disabled {
+  background-color: #3f51b5;
+  color: #ffffff;
+}
+
+.mat-divider {
+  margin-block: 1rem;
+  border-top-width: 2px;
+  border-top-color: #3f51b5;
+}
+
+p {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.c-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}

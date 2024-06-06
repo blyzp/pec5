@@ -1,0 +1,104 @@
+<div class="c-container">
+  <div class="c-detail-container">
+    <mat-card>
+      <mat-card-header>
+        <div class="c-card-header-first">
+          <mat-card-title>{{ detail.title }}</mat-card-title>
+        </div>
+        <div class="c-card-header-last">
+          <button mat-flat-button [routerLink]="['/']" color="primary">
+            Back
+          </button>
+        </div>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-content>
+        <div class="c-image-container">
+          <img src="{{ detail.image_url }}" />
+        </div>
+
+        <button
+          *ngIf="!show"
+          mat-flat-button
+          (click)="showDetails()"
+          color="primary"
+        >
+          Show all details
+        </button>
+
+        <div *ngIf="show">
+          <div *ngIf="isMobile" class="c-accordion-container">
+            <mat-accordion>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>Artist</mat-panel-title>
+                </mat-expansion-panel-header>
+                <p>{{ detail.artist_display }}</p>
+              </mat-expansion-panel>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>Year</mat-panel-title>
+                </mat-expansion-panel-header>
+                {{ detail.date_start }}
+              </mat-expansion-panel>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>Medium</mat-panel-title>
+                </mat-expansion-panel-header>
+                {{ detail.medium_display }}
+              </mat-expansion-panel>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>Description</mat-panel-title>
+                </mat-expansion-panel-header>
+                <div [innerHTML]="detail.short_description"></div>
+              </mat-expansion-panel>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>Dimensions</mat-panel-title>
+                </mat-expansion-panel-header>
+                {{ detail.dimensions }}
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+
+          <mat-tab-group *ngIf="!isMobile" class="c-group">
+            <mat-tab label="Artist"
+              ><div class="c-tab">
+                {{ detail.artist_display }}
+              </div></mat-tab
+            >
+            <mat-tab label="Year"
+              ><div class="c-tab c-year-container">
+                <div>
+                  {{ detail.date_start }}
+                </div>
+                <div>
+                  <mat-progress-bar
+                    mode="determinate"
+                    value="{{ this.year }}"
+                  ></mat-progress-bar>
+                  <div class="c-bar-year">
+                    <div class="c-bar-year-first">1801</div>
+                    <div class="c-bar-year-last">1906</div>
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
+            <mat-tab label="Medium"
+              ><div class="c-tab">{{ detail.medium_display }}</div></mat-tab
+            >
+            <mat-tab label="Description"
+              ><div [innerHTML]="detail.short_description" class="c-tab"></div
+            ></mat-tab>
+            <mat-tab label="Dimensions"
+              ><div class="c-tab">
+                {{ detail.dimensions }}
+              </div></mat-tab
+            >
+          </mat-tab-group>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

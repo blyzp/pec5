@@ -1,0 +1,44 @@
+<div class="c-spinner" *ngIf="loading">
+  <mat-spinner [diameter]="50"></mat-spinner>
+</div>
+
+<div class="c-container">
+  <div class="c-menu-container">
+    <h1><a href="/">Artworks</a></h1>
+    <div class="c-view">
+      <button
+        mat-mini-fab
+        (click)="toggleCard()"
+        [disabled]="card"
+        aria-label="Card view"
+      >
+        <mat-icon>view_module</mat-icon>
+      </button>
+      <button
+        mat-mini-fab
+        (click)="toggleGrid()"
+        [disabled]="grid"
+        aria-label="Table view"
+      >
+        <mat-icon>view_list</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <p>
+    A selection of Impressionism artworks from the
+    <a href="https://api.artic.edu/docs/">Art Institute of Chicago</a>.
+  </p>
+
+  <div [@loading]="artworks.length" *ngIf="card" class="c-card-container">
+    <div *ngFor="let artwork of artworks">
+      <app-card [data]="artwork"></app-card>
+    </div>
+  </div>
+
+  <div [@loading]="artworks.length" *ngIf="grid">
+    <app-grid [data]="artworks"></app-grid>
+  </div>
+</div>

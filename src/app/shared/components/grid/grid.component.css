@@ -1,0 +1,38 @@
+.mat-mdc-table {
+  border-spacing: 0 1rem;
+}
+
+.mat-mdc-row:hover {
+  cursor: pointer;
+}
+
+.mat-mdc-row:last-child .mat-mdc-cell,
+.mat-mdc-cell {
+  padding: 10px;
+  border: 1px solid #cccccc;
+}
+
+.mat-mdc-cell:hover,
+.mat-mdc-cell:has(~ .mat-mdc-cell:hover),
+.mat-mdc-cell:hover ~ .mat-mdc-cell {
+  background-color: #f8f8fc;
+}
+
+.mat-mdc-row:last-child .mat-mdc-cell:first-child,
+.mat-mdc-cell:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-right-width: 0;
+}
+
+.mat-mdc-cell:nth-child(2) {
+  color: #3f51b5;
+  font-weight: 500;
+}
+
+.mat-mdc-row:last-child .mat-mdc-cell:last-child,
+.mat-mdc-cell:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-left-width: 0;
+}

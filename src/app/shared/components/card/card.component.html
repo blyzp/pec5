@@ -1,0 +1,12 @@
+<mat-card [routerLink]="['/artwork', data.id]" role="link">
+  <mat-card-header>
+    <mat-card-title>{{ data.title }}</mat-card-title>
+    <mat-card-subtitle>{{ data.id }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-content>
+    <p>{{ data.thumbnail.alt_text }}</p>
+  </mat-card-content>
+</mat-card>

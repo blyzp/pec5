@@ -1,0 +1,115 @@
+.c-detail-container {
+  display: flex;
+  justify-content: center;
+  margin-block: 2rem;
+}
+
+.mat-mdc-card {
+  width: 90cqw;
+
+  @media (width > 768px) {
+    width: 80cqw;
+  }
+
+  @media (width > 992px) {
+    width: 70cqw;
+  }
+}
+
+.mat-mdc-card-header {
+  display: grid;
+  grid-template-columns: 1fr 90px;
+}
+
+.c-card-header-first {
+  grid-column: 1;
+  align-self: center;
+  justify-self: start;
+}
+
+.c-card-header-last {
+  grid-column: 2;
+  align-self: center;
+  justify-self: end;
+}
+
+.mat-mdc-card-title {
+  color: #3f51b5;
+}
+
+button {
+  font-size: 0.9rem;
+  border-radius: 25px;
+}
+
+.mat-divider {
+  margin-block: 1rem;
+  border-top-width: 2px;
+  border-top-color: #3f51b5;
+}
+
+.mat-mdc-card-content {
+  text-align: center;
+}
+
+.c-image-container {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 15px;
+}
+
+.c-accordion-container {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.mat-expansion-panel-spacing {
+  margin: 0;
+}
+
+.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+  box-shadow: none;
+  border: 1px solid #e6e6e6;
+  border-bottom: none;
+}
+
+.mat-expansion-panel:not([class*="mat-elevation-z"]):last-child {
+  border: 1px solid #e6e6e6;
+}
+
+.mat-expansion-panel-header-title {
+  color: #3f51b5;
+}
+
+.mat-mdc-tab-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.c-tab {
+  padding: 1.5rem;
+}
+
+.c-year-container {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+}
+
+.c-bar-year {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 0.75rem;
+}
+
+.c-bar-year-first {
+  justify-self: start;
+}
+
+.c-bar-year-last {
+  justify-self: end;
+}
