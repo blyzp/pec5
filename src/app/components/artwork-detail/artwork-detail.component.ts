@@ -28,6 +28,9 @@ export class ArtworkDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const identifier = this.activatedRoute.snapshot.paramMap.get('id')!;
+    const regex = /\n/;
+
     this.observer.observe(['(max-width: 576px)']).subscribe((screenSize) => {
       if (screenSize.matches) {
         this.isMobile = true;
@@ -36,7 +39,6 @@ export class ArtworkDetailComponent implements OnInit {
       }
     });
 
-    const identifier = this.activatedRoute.snapshot.paramMap.get('id')!;
     this.artworksService.getArtworkById(identifier).subscribe((artwork) => {
       if (!artwork) {
         return this.router.navigateByUrl('/');
@@ -52,6 +54,11 @@ export class ArtworkDetailComponent implements OnInit {
         dimensions: artwork.data.dimensions,
         image_url: `https://www.artic.edu/iiif/2/${artwork.data.image_id}/full/843,/0/default.jpg`,
       };
+
+      this.detail.artist_display = this.detail.artist_display.replace(
+        regex,
+        ', '
+      );
 
       if (this.detail.short_description === null) {
         this.detail.short_description = '-';
