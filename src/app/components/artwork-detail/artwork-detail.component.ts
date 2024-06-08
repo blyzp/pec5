@@ -57,7 +57,7 @@ export class ArtworkDetailComponent implements OnInit {
 
       this.detail.artist_display = this.detail.artist_display.replace(
         regex,
-        ', '
+        '<br />'
       );
 
       if (this.detail.short_description === null) {

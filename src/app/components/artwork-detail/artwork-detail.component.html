@@ -33,7 +33,7 @@
                 <mat-expansion-panel-header>
                   <mat-panel-title>Artist</mat-panel-title>
                 </mat-expansion-panel-header>
-                <p>{{ detail.artist_display }}</p>
+                <div [innerHTML]="detail.artist_display"></div>
               </mat-expansion-panel>
               <mat-expansion-panel>
                 <mat-expansion-panel-header>
@@ -64,10 +64,8 @@
 
           <mat-tab-group *ngIf="!isMobile" class="c-group">
             <mat-tab label="Artist"
-              ><div class="c-tab">
-                {{ detail.artist_display }}
-              </div></mat-tab
-            >
+              ><div [innerHTML]="detail.artist_display" class="c-tab"></div
+            ></mat-tab>
             <mat-tab label="Year"
               ><div class="c-tab c-year-container">
                 <div>
